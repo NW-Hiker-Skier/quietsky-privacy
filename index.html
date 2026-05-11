@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Quiet Sky — Privacy Policy</title>
+<meta name="referrer" content="no-referrer">
+<style>
+  :root { color-scheme: light dark; }
+  body {
+    max-width: 720px;
+    margin: 2rem auto;
+    padding: 0 1rem 4rem;
+    font: 16px/1.6 -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+    color: #111;
+    background: #fff;
+  }
+  @media (prefers-color-scheme: dark) {
+    body { color: #ddd; background: #111; }
+    a { color: #6cf; }
+    code, pre { background: #1a1a1a; color: #ddd; }
+    th, td { border-color: #333; }
+  }
+  h1, h2, h3 { line-height: 1.25; }
+  h1 { margin-top: 0; }
+  table { border-collapse: collapse; width: 100%; margin: 1rem 0; }
+  th, td { border: 1px solid #ccc; padding: 0.4rem 0.6rem; text-align: left; vertical-align: top; }
+  code { font-family: 'SF Mono', Menlo, Consolas, monospace; font-size: 0.92em; }
+  pre { background: #f4f4f4; padding: 0.8rem; overflow-x: auto; border-radius: 4px; }
+  hr { border: 0; border-top: 1px solid #ccc; margin: 2rem 0; }
+  a { color: #06c; }
+</style>
+</head>
+<body>
+<pre># Quiet Sky — Privacy Policy
+
+**Effective date:** May 11, 2026
+**App:** Quiet Sky (Android package `com.auroraweather.app`)
+**Publisher:** Aaron Coldiron, Bellevue, Washington, USA
+**Contact:** [your contact email]
+
+This is a long privacy policy. It is long because the alternative is vague, and vague privacy policies are how apps lie. Read what you care about; skip what you don&#x27;t.
+
+---
+
+## Summary in one paragraph
+
+Quiet Sky has no user accounts, no analytics SDKs, no crash reporting SDKs, no advertising IDs, no third-party trackers, and no server that stores anything about you. The app talks to weather APIs (Open-Meteo, Foreca, Pirate Weather, IQAir) through a proxy server we operate on Cloudflare Workers. The proxy forwards your latitude, longitude, and the requested data type to those upstream APIs; it does not log requests. The upstream APIs receive an IP address (the Cloudflare Worker&#x27;s, not yours) and your coordinates. Your locations are user-entered (no GPS permission requested) and stored only on your device. We do not have a database, an account system, or a way to identify you.
+
+If that&#x27;s enough for you, you can stop reading. The rest spells it out.
+
+---
+
+## 1. What data the app collects on your device
+
+| Data | Source | Stored where | Sent anywhere? |
+|---|---|---|---|
+| Locations you add (city/town names + coordinates) | You type them in or pick from search results | On your device, in app-private storage | Coordinates are sent to weather APIs (see §3). City names are not sent. |
+| Provider preference (Open-Meteo / Foreca / Pirate Weather) | Your selection in Settings | On your device, in app-private storage | No |
+| Theme preference (light / dark / auto, signature / photoreal hero) | Your selection in Settings | On your device, in app-private storage | No |
+| Forecast cache (last weather response) | Returned by the API for a location you asked about | On your device, in app-private storage | No |
+
+**No personal information is collected.** Quiet Sky does not ask for your name, your email, your phone number, or your date of birth. There are no accounts, no sign-in, and no way to &quot;log in&quot; to the app.
+
+**Quiet Sky does not request the Android location permission.** It does not use GPS, network location, or the fused location provider. To get weather for &quot;your current location,&quot; type the location yourself into the location picker — same as you would in a search box.
+
+---
+
+## 2. What data we collect on our server
+
+We operate a Cloudflare Worker at `aurora-weather-proxy.coldironguard.workers.dev` that the app uses as a proxy between your device and the upstream weather APIs. The proxy exists for three concrete reasons: (a) so we can swap upstream providers without shipping a new APK, (b) so upstream API keys are not embedded in the client APK, and (c) so the upstream APIs see Cloudflare&#x27;s IP and not yours.
+
+**The proxy does not log requests to durable storage.** Cloudflare&#x27;s edge nodes write short-lived operational logs (Cloudflare retains its standard edge logs for 7 days for the platform&#x27;s own ops/abuse purposes — see Cloudflare&#x27;s documentation). We do not enable Logpush, we do not write to a database, and we do not have an analytics view in the Worker dashboard. We have no way to retrieve a record of what your device asked for an hour ago, much less a day ago.
+
+**The proxy does not associate requests with users**, because there is no user identity to associate them with. There is no API key per device, no token, no cookie, no device fingerprint.
+
+What the proxy briefly sees in memory while handling a request:
+- The latitude and longitude you asked about (passed to the upstream API).
+- The type of data requested (forecast, hourly forecast, AQI anchor).
+- The HTTP headers your device sends. The User-Agent is a generic OkHttp string.
+- Your IP address, because Cloudflare&#x27;s edge needs it to route the response. The Worker code does not read, log, or persist this.
+
+What the proxy does *not* see, ever:
+- The names of locations you&#x27;ve saved on your device.
+- Your other locations (each weather request is for one lat/lon at a time).
+- Any identifier that could be tied to your device or account across requests.
+
+---
+
+## 3. Third-party services and what they see
+
+Quiet Sky uses these upstream APIs. **They are the only network destinations the app talks to.** All requests go through our Cloudflare Worker proxy, so these upstream APIs receive our Worker&#x27;s Cloudflare IP, not yours.
+
+| Upstream | What they receive per request | Their privacy policy |
+|---|---|---|
+| Open-Meteo | Latitude, longitude, request parameters | https://open-meteo.com/en/terms |
+| Foreca (paid tier) | Latitude, longitude, request parameters | https://corporate.foreca.com/en/privacy |
+| Pirate Weather (paid tier) | Latitude, longitude, request parameters | https://pirateweather.net/en/latest/ |
+| IQAir AirVisual (for AQI anchor) | Latitude, longitude | https://www.iqair.com/us/privacy-policy |
+| Open-Meteo Geocoding (for the location search box) | The text you type into the search box | https://open-meteo.com/en/terms |
+
+**Quiet Sky does not embed Firebase, Google Analytics, Crashlytics, Mixpanel, Amplitude, Sentry, Bugsnag, Adjust, AppsFlyer, Facebook SDK, ironSource, Mintegral, Pangle, Unity Ads, AdMob, or any other analytics, attribution, or advertising SDK.** Inspect the APK if you&#x27;d like — `classes.dex` will not contain any of those packages.
+
+---
+
+## 4. Permissions the app requests
+
+| Permission | Used for | Required? |
+|---|---|---|
+| `POST_NOTIFICATIONS` | Severe weather alerts and daily summary notifications. Both are off by default. | Optional — deny it and the app still works. |
+| `INTERNET` | Talking to the weather proxy. | Yes, denying it means no weather data. |
+| `RECEIVE_BOOT_COMPLETED` | Rescheduling background refresh after device reboot. | Yes. No network activity at boot itself. |
+
+Quiet Sky does **not** request:
+- Location (`ACCESS_FINE_LOCATION` / `ACCESS_COARSE_LOCATION`)
+- Contacts, calendar, microphone, camera, SMS, phone
+- Storage outside the app&#x27;s own private directory
+- Bluetooth, NFC, USB
+- Any &quot;special&quot; permissions like SYSTEM_ALERT_WINDOW or accessibility services
+
+---
+
+## 5. The Play Billing case
+
+If you subscribe to Quiet Sky Pro (when subscriptions launch), the transaction is handled entirely by the Google Play Billing Library. We do not see your payment method. Google tells us &quot;this purchase token belongs to an active subscription&quot;; we cache that locally on your device. We do not get your name, email, billing address, or last four digits.
+
+We do not currently operate a backend that records subscription state, so subscription validation is done client-side against Google Play. If you uninstall and reinstall, the Play Billing Library restores your entitlement from Google&#x27;s record.
+
+---
+
+## 6. Children
+
+Quiet Sky is not directed at children under 13. We do not knowingly collect any data from anyone — including children — because we don&#x27;t have a backend that collects data.
+
+---
+
+## 7. Data retention
+
+- **Server side:** Nothing is stored, so retention is &quot;the request duration.&quot; Cloudflare&#x27;s edge logs are retained per Cloudflare&#x27;s policy (currently 7 days).
+- **Device side:** Your saved locations, preferences, and last-known forecast cache stay on your device until you clear app data or uninstall.
+
+---
+
+## 8. Your rights under GDPR / CCPA
+
+The standard &quot;right to know what we have on you&quot; and &quot;right to delete&quot; both resolve trivially: we don&#x27;t have anything on you to know about or to delete. There is no server-side record tied to you to request.
+
+If you want to clear what&#x27;s on your device:
+- Settings → Apps → Quiet Sky → Storage → Clear data.
+
+If you want to be sure the proxy never sees you again: stop using the app. There is no account to close.
+
+---
+
+## 9. Security
+
+Network traffic is HTTPS only. The app pins to the Cloudflare Worker&#x27;s TLS certificate at the standard system trust store level (we don&#x27;t currently use certificate pinning — see §11 below).
+
+The app&#x27;s local storage uses Android&#x27;s standard app-sandbox protection. We do not currently encrypt the local DataStore with a user-derived key (it&#x27;s protected by Android&#x27;s userdata partition encryption, which is the platform default on all modern Android devices).
+
+---
+
+## 10. Changes to this policy
+
+If we change this policy, the new version replaces this one at the same URL. The effective date at the top will update. If a change materially expands what data flows where, we will note that change in the app&#x27;s &quot;What&#x27;s new&quot; release notes for that version.
+
+---
+
+## 11. Things we&#x27;d rather be honest about than hide
+
+A few things this policy does *not* claim, which other apps&#x27; policies sometimes do:
+
+- **We do not have certificate pinning.** A network-level attacker with a trusted root could MITM the proxy. Adding certificate pinning is on the roadmap.
+- **We do not have a Tor mode.** Your ISP can see that you&#x27;re talking to `coldironguard.workers.dev`, just not what&#x27;s in the request.
+- **We do not claim to be GDPR or CCPA &quot;compliant&quot; as a marketing checkmark.** We&#x27;ve designed around not collecting data, which is the only honest way to make those frameworks easy.
+- **Cloudflare is a US company subject to US legal process.** If we (the publisher) received a US government order for records, we would have nothing to hand over because the Worker writes none. Cloudflare&#x27;s edge platform logs (the 7-day operational ones) are subject to Cloudflare&#x27;s own legal-process handling, not ours.
+- **The proxy proxies. It does not &quot;anonymize&quot; in any cryptographically meaningful sense.** It is not a VPN, not Tor, not a mixnet. It is an HTTPS request forwarder that happens to terminate your IP at Cloudflare rather than at the upstream weather API.
+
+---
+
+## 12. Contact
+
+Aaron Coldiron — [your contact email]
+
+If you find a bug, security issue, or something this policy says that turns out not to be accurate, please email and I will respond.
+</pre>
+<hr>
+<p style="font-size: 0.85em; color: #888;">
+This page is hosted on GitHub Pages from
+<a href="https://github.com/NW-Hiker-Skier/quietsky-privacy">github.com/NW-Hiker-Skier/quietsky-privacy</a>.
+No analytics, no cookies. Edit history is public; the same content lives in the Quiet Sky app source repo at <code>docs/PRIVACY.md</code>.
+</p>
+</body>
+</html>
