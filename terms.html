@@ -134,6 +134,12 @@ code {
 }
 .qs-callout-title { font-size: 13px !important; text-transform: uppercase; letter-spacing: 0.08em; color: var(--qs-accent) !important; margin: 0 0 8px !important; }
 .qs-callout p { margin: 0; color: var(--qs-text-2); }
+.qs-callout p + p { margin-top: 10px; }
+.qs-callout--warn {
+  border-left: 3px solid #F0A14F;
+  background: linear-gradient(180deg, rgba(240,161,79,0.10) 0%, var(--qs-surface) 100%);
+}
+.qs-callout--warn .qs-callout-title { color: #F0B97A !important; }
 
 /* Tables */
 .qs-table-wrap { overflow-x: auto; margin: 0 0 18px; border-radius: var(--qs-radius); border: 1px solid var(--qs-outline-subtle); }
@@ -234,6 +240,12 @@ tbody tr:hover td { background: rgba(255,255,255,0.02); }
     </div>
     <hr/>
 
+    <div class="qs-callout qs-callout--warn">
+      <h2 class="qs-callout-title">Quiet Sky is not a safety or emergency tool</h2>
+      <p>Quiet Sky is for general, everyday weather awareness. Weather data and forecasts are inherently uncertain and can be delayed, incomplete, or wrong. <strong>Do not rely on Quiet Sky as your only source for any safety-critical decision</strong>&nbsp;— including severe weather, tornado, flood, wildfire, evacuation, marine, aviation, backcountry, mountaineering, agricultural, or medical decisions.</p>
+      <p>For life-safety information, always use official sources: the U.S. National Weather Service, NOAA Weather Radio, FEMA, local emergency management, and the official alerts on your device. If you are in danger, contact your local emergency services.</p>
+    </div>
+
     <h2 id="t1">1. What Quiet Sky provides</h2>
     <p>Quiet Sky is a weather app. It shows forecasts, radar, air quality, alerts, widgets, and related weather context from third-party providers and local device state.</p>
     <p>Weather is uncertain. Quiet Sky is not an emergency service and should not be your only source for severe weather, evacuation, marine, aviation, backcountry, medical, or life-safety decisions. Use official local alerts and emergency channels when safety matters.</p>
@@ -272,8 +284,8 @@ tbody tr:hover td { background: rgba(255,255,255,0.02); }
     <h2 id="t8">8. Changes</h2>
     <p>These terms may be updated from time to time. The updated version will be posted here and linked from the app. Material subscription terms shown by Google Play at purchase remain available through Google Play.</p>
 
-    <h2 id="t9">9. Disclaimer</h2>
-    <p>Quiet Sky is provided as-is. Forecasts, alerts, map layers, radar layers, and derived summaries can be delayed, incomplete, or wrong. To the fullest extent allowed by law, Quiet Sky and its developer are not liable for losses caused by reliance on weather information, unavailable service, provider errors, or device/network problems.</p>
+    <h2 id="t9">9. Disclaimer of warranties</h2>
+    <p>Quiet Sky is provided <strong>"as is" and "as available," without warranties of any kind</strong>, whether express, implied, or statutory. To the fullest extent allowed by law, Quiet Sky and its developer disclaim all implied warranties, including any implied warranties of <strong>merchantability, fitness for a particular purpose, accuracy, and non-infringement</strong>. We do not warrant that the app, its data, forecasts, alerts, map layers, radar layers, or derived summaries will be accurate, complete, current, reliable, uninterrupted, or error-free. Some jurisdictions do not allow the exclusion of certain implied warranties, so some of these exclusions may not apply to you.</p>
 
     <h2 id="t10">10. Governing law</h2>
     <p>These terms are governed by the laws of Washington state, except where consumer-protection law in your location requires otherwise.</p>
@@ -298,6 +310,20 @@ tbody tr:hover td { background: rgba(255,255,255,0.02); }
 
     <h2 id="t13">13. Indemnification</h2>
     <p>To the fullest extent allowed by law, you agree to indemnify and hold harmless Quiet Sky and its developer from and against any claims, liabilities, damages, losses, and reasonable expenses (including reasonable legal fees) arising out of or related to (a) your misuse of Quiet Sky, (b) your violation of these terms, or (c) your violation of any law or the rights of a third party. This does not apply to the extent a claim arises from Quiet Sky's own breach of these terms or its negligence or willful misconduct.</p>
+
+    <h2 id="t14">14. License and intellectual property</h2>
+    <p>Quiet Sky, including its software, design, text, graphics, logos, and the "Quiet Sky" name, is owned by its developer and is protected by intellectual-property laws. Subject to these terms, you are granted a personal, limited, non-exclusive, non-transferable, revocable license to install and use Quiet Sky on devices you own or control, for your own non-commercial use.</p>
+    <p>You may not copy, modify, distribute, sell, sublicense, rent, or create derivative works from the app; remove or alter any proprietary notices; or reverse-engineer, decompile, or disassemble the app, except to the limited extent that applicable law expressly permits despite this restriction. All rights not expressly granted are reserved.</p>
+
+    <h2 id="t15">15. Termination</h2>
+    <p>You may stop using Quiet Sky at any time by uninstalling it. We may suspend or terminate your access to Quiet Sky, in whole or in part, if you materially violate these terms, misuse the service or its infrastructure, or where we reasonably need to in order to comply with law or protect the service or other users. Sections that by their nature should survive termination &mdash; including the disclaimers, limitation of liability, indemnification, dispute-resolution, and governing-law provisions &mdash; will survive. Termination does not affect any subscription rights handled through Google Play, which remain governed by Google Play's policies.</p>
+
+    <h2 id="t16">16. General</h2>
+    <p><strong>Entire agreement.</strong> These terms, together with the Privacy Policy and any purchase terms shown by Google Play, are the entire agreement between you and Quiet Sky's developer regarding the app, and replace any prior understandings on that subject.</p>
+    <p><strong>Severability.</strong> If any provision of these terms is found unenforceable, that provision will be limited or removed to the minimum extent necessary, and the remaining provisions will stay in full effect.</p>
+    <p><strong>No waiver.</strong> If we do not enforce a provision of these terms, that is not a waiver of our right to enforce it later.</p>
+    <p><strong>Assignment.</strong> You may not assign or transfer these terms without our consent. We may assign these terms in connection with a merger, acquisition, sale of assets, or by operation of law.</p>
+    <p><strong>Mandatory consumer rights.</strong> Nothing in these terms limits any rights you have under mandatory consumer-protection law in your country or state of residence that cannot be waived by agreement.</p>
   </div>
 </main>
 

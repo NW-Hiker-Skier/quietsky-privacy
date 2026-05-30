@@ -4,7 +4,7 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Privacy Policy — Quiet Sky</title>
-<meta name="description" content="Quiet Sky privacy policy. No accounts, no analytics SDKs, no trackers, no server that stores anything about you." />
+<meta name="description" content="Quiet Sky privacy policy. No accounts, no analytics SDKs, no trackers, and no server-side records tied to you. We do not sell or share your personal information." />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
@@ -238,7 +238,7 @@ tbody tr:hover td { background: rgba(255,255,255,0.02); }
 
     <div class="qs-callout">
       <h2 class="qs-callout-title">The one-paragraph version</h2>
-      <p>Quiet Sky has no user accounts, no analytics SDKs, no crash-reporting SDKs, no advertising IDs, no third-party trackers, and no server that stores anything about you. The app talks to weather, air-quality, sunset-quality, build-status, and geocoding APIs through a proxy we operate on Cloudflare Workers. The proxy forwards the minimum route data needed for each request and does not log requests. Upstream APIs receive the Worker's IP, not yours. Your saved locations live only on your device. You can lower forecast location precision in Settings. We have no database, no account system, and no way to identify you. Map and radar traffic may connect directly to the selected provider&nbsp;— see Section&nbsp;3.</p>
+      <p>Quiet Sky has no user accounts, no analytics SDKs, no crash-reporting SDKs, no advertising IDs, no third-party trackers, and no server-side database of records tied to you. The app talks to weather, air-quality, sunset-quality, build-status, and geocoding APIs through a proxy we operate on Cloudflare Workers. The proxy forwards the minimum route data needed for each request and does not log requests to durable storage. To return a response, Cloudflare's edge necessarily handles your device's IP address in memory; our Worker code does not read, log, or persist it (see Section&nbsp;2). Upstream APIs receive the Worker's IP, not yours. Your saved locations live only on your device. You can lower forecast location precision in Settings. We have no account system and no way to identify you, and <strong>we do not sell or share your personal information</strong>. Map and radar traffic currently connects directly to the selected provider; routing it through the proxy is in progress (see Section&nbsp;3).</p>
     </div>
 
     <h2 id="s1">1. What data the app collects on your device</h2>
@@ -277,7 +277,7 @@ tbody tr:hover td { background: rgba(255,255,255,0.02); }
     </ul>
 
     <h2 id="s3">3. Third-party services and what they see</h2>
-    <p>Quiet Sky uses these upstream APIs. Weather, air-quality, sunset-quality, build-status, and location-search requests go through our Cloudflare Worker proxy, so those upstream APIs receive our Worker's Cloudflare IP, not yours. Map and radar traffic is not fully proxied yet; the current direct map/radar providers and partially proxied radar-tile path are listed below.</p>
+    <p>Quiet Sky uses these upstream APIs. Weather, air-quality, sunset-quality, build-status, and location-search requests go through our Cloudflare Worker proxy, so those upstream APIs receive our Worker's Cloudflare IP, not yours. Map and radar traffic currently connects directly to the selected provider and is not yet fully proxied; routing it through the proxy is in progress. The current direct map/radar providers and the partially proxied radar-tile path are listed below.</p>
     <div class="qs-table-wrap">
     <table>
       <thead><tr><th>Upstream</th><th>What they receive per request</th><th>Privacy policy</th></tr></thead>
@@ -325,7 +325,9 @@ tbody tr:hover td { background: rgba(255,255,255,0.02); }
     </ul>
 
     <h2 id="s8">8. Your rights under GDPR / CCPA</h2>
+    <p><strong>Data controller.</strong> Quiet Sky is operated by Aaron Coldiron (Bellevue, WA, USA), reachable at <a href="mailto:quiet.sky.weather@gmail.com">quiet.sky.weather@gmail.com</a>. Because the app keeps no server-side records tied to you, there is no centralized profile to administer.</p>
     <p>The "right to know what we have on you" and "right to delete" both resolve trivially: we don't have anything on you to know about or to delete. There is no server-side record tied to you.</p>
+    <p><strong>No sale or sharing of personal information.</strong> We do not sell your personal information, and we do not "share" it for cross-context behavioral advertising, as those terms are defined under the California Consumer Privacy Act (CCPA/CPRA). We have never done so and have no mechanism to. Because we do not sell or share personal information, no "Do Not Sell or Share My Personal Information" action is needed.</p>
     <p>To clear what's on your device: Settings → Apps → Quiet Sky → Storage → Clear data. To be sure the proxy never sees you again: stop using the app. There is no account to close.</p>
 
     <h2 id="s9">9. Security</h2>
