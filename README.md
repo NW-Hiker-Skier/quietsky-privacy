@@ -1,9 +1,16 @@
-# Quiet Sky — Privacy Policy
+# Quiet Sky — Privacy Policy & Terms
 
-Live at: https://nw-hiker-skier.github.io/quietsky-privacy/
+Live at:
+- Privacy: https://nw-hiker-skier.github.io/quietsky-privacy/
+- Terms: https://nw-hiker-skier.github.io/quietsky-privacy/terms.html
 
-This repo hosts the public-facing privacy policy for the Quiet Sky Android app via GitHub Pages.
+This public repo hosts the branded, public-facing **Privacy Policy** (`index.html`) and
+**Terms of Use** (`terms.html`) for the Quiet Sky Android app, served via GitHub Pages.
 
-Source of truth is the markdown version in the main app repo at `docs/PRIVACY.md`. This repo carries a rendered HTML build of that file for static hosting.
+Design: dark navy canvas (`#0C1A2A`) + sunset-gradient brand mark, Inter typography —
+matching the Quiet Sky app's brand system. CSS is inlined in each file; `.nojekyll`
+keeps Pages serving the raw HTML (no Jekyll theme).
 
-When the policy changes, regenerate `index.html` from the canonical markdown and push.
+The canonical source text lives in the main (private) app repo at `docs/PRIVACY.md`
+and `docs/TERMS.md`. When the policy or terms change, update the body copy here to match
+and push; Pages redeploys automatically.

@@ -1,450 +1,295 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Quiet Sky — Terms of Use</title>
-<meta name="description" content="Terms of use for the Quiet Sky weather app. Plain-English, privacy-first.">
-<meta name="referrer" content="no-referrer">
-<meta name="theme-color" content="#1F3A5F" media="(prefers-color-scheme: light)">
-<meta name="theme-color" content="#0F1F33" media="(prefers-color-scheme: dark)">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Terms — Quiet Sky</title>
+<meta name="description" content="Quiet Sky terms of service. The basic rules for using a privacy-first weather app." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
 <style>
-  :root {
-    color-scheme: light dark;
-    --brand-primary: #1F3A5F;
-    --brand-primary-2: #2E5C8A;
-    --brand-tint: #E8F0F7;
-    --brand-tint-2: #d8e4ef;
-    --text: #1a1f2c;
-    --text-muted: #5a6577;
-    --bg: #ffffff;
-    --bg-soft: #f7f9fc;
-    --border: #e2e8f0;
-    --link: #2E5C8A;
-    --code-bg: #f1f5f9;
-    --warn-bg: #fff7e6;
-    --warn-border: #ffc04d;
-    --warn-text: #7a4a00;
-    --shadow: 0 1px 2px rgba(15, 31, 51, 0.04), 0 4px 16px rgba(15, 31, 51, 0.06);
-  }
-  @media (prefers-color-scheme: dark) {
-    :root {
-      --brand-primary: #6FA3D6;
-      --brand-primary-2: #8FBEEF;
-      --brand-tint: #1a2a3f;
-      --brand-tint-2: #233448;
-      --text: #e6ecf5;
-      --text-muted: #93a0b5;
-      --bg: #0F1F33;
-      --bg-soft: #152a44;
-      --border: #2a3f5c;
-      --link: #8FBEEF;
-      --code-bg: #1a2a3f;
-      --warn-bg: #3a2a10;
-      --warn-border: #b87f1a;
-      --warn-text: #ffd99a;
-      --shadow: 0 1px 2px rgba(0, 0, 0, 0.3), 0 4px 16px rgba(0, 0, 0, 0.25);
-    }
-  }
-  * { box-sizing: border-box; }
-  html { -webkit-text-size-adjust: 100%; }
-  body {
-    margin: 0;
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
-    font-size: 16px;
-    line-height: 1.65;
-    color: var(--text);
-    background: var(--bg);
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-  }
-  .header {
-    background: linear-gradient(135deg, var(--brand-primary) 0%, var(--brand-primary-2) 100%);
-    color: #fff;
-    padding: 2.5rem 1.25rem 2rem;
-    text-align: center;
-  }
-  .header-inner { max-width: 760px; margin: 0 auto; }
-  .header h1 {
-    margin: 0 0 0.4rem;
-    font-size: clamp(1.6rem, 4vw + 0.5rem, 2.2rem);
-    font-weight: 700;
-    letter-spacing: -0.02em;
-    line-height: 1.15;
-  }
-  .header .tagline { margin: 0; font-size: 0.95rem; font-weight: 400; opacity: 0.85; }
-  .header .meta { margin-top: 1rem; font-size: 0.82rem; opacity: 0.75; font-variant-numeric: tabular-nums; }
-  .logo-mark {
-    display: inline-block;
-    width: 56px;
-    height: 56px;
-    margin-bottom: 0.75rem;
-    border-radius: 14px;
-    background: rgba(255,255,255,0.14);
-    border: 1px solid rgba(255,255,255,0.18);
-    position: relative;
-    overflow: hidden;
-  }
-  .logo-mark svg { width: 100%; height: 100%; display: block; }
-  main { max-width: 760px; margin: 0 auto; padding: 2.5rem 1.25rem 5rem; }
-  h2 {
-    margin: 2.5rem 0 0.75rem;
-    font-size: 1.35rem;
-    font-weight: 600;
-    line-height: 1.3;
-    letter-spacing: -0.01em;
-    border-bottom: 1px solid var(--border);
-    padding-bottom: 0.4rem;
-  }
-  h3 { margin: 1.5rem 0 0.5rem; font-size: 1.02rem; font-weight: 600; }
-  p { margin: 0.75rem 0; }
-  ul { padding-left: 1.3rem; }
-  li { margin: 0.3rem 0; }
-  a { color: var(--link); text-decoration: none; border-bottom: 1px solid transparent; transition: border-color 0.15s ease; }
-  a:hover { border-bottom-color: var(--link); }
-  strong { color: var(--text); font-weight: 600; }
-  code {
-    font-family: 'JetBrains Mono', 'SF Mono', Menlo, Consolas, monospace;
-    font-size: 0.9em;
-    background: var(--code-bg);
-    padding: 0.12em 0.4em;
-    border-radius: 4px;
-  }
-  hr { border: 0; border-top: 1px solid var(--border); margin: 2.5rem 0; }
-  .summary {
-    background: var(--brand-tint);
-    border: 1px solid var(--brand-tint-2);
-    border-left: 4px solid var(--brand-primary);
-    border-radius: 8px;
-    padding: 1.1rem 1.25rem;
-    margin: 1.5rem 0 2rem;
-  }
-  .summary h3 {
-    margin-top: 0;
-    color: var(--brand-primary);
-    font-size: 0.78rem;
-    font-weight: 600;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-  }
-  .summary p { margin-bottom: 0; font-size: 0.97rem; }
-  .warn {
-    background: var(--warn-bg);
-    border: 1px solid var(--warn-border);
-    border-left: 4px solid var(--warn-border);
-    border-radius: 8px;
-    padding: 1rem 1.25rem;
-    margin: 1.25rem 0;
-    color: var(--warn-text);
-  }
-  .warn strong { color: var(--warn-text); }
-  table {
-    width: 100%;
-    border-collapse: collapse;
-    margin: 1rem 0 1.5rem;
-    font-size: 0.93rem;
-    box-shadow: var(--shadow);
-    border-radius: 8px;
-    overflow: hidden;
-    border: 1px solid var(--border);
-  }
-  th {
-    background: var(--bg-soft);
-    font-weight: 600;
-    text-align: left;
-    padding: 0.65rem 0.85rem;
-    border-bottom: 1px solid var(--border);
-    font-size: 0.82rem;
-    letter-spacing: 0.02em;
-    text-transform: uppercase;
-  }
-  td { padding: 0.7rem 0.85rem; border-bottom: 1px solid var(--border); vertical-align: top; }
-  tr:last-child td { border-bottom: none; }
-  tr:hover td { background: var(--bg-soft); }
-  .toc {
-    background: var(--bg-soft);
-    border: 1px solid var(--border);
-    border-radius: 8px;
-    padding: 1rem 1.25rem;
-    margin: 1.5rem 0 2.5rem;
-    font-size: 0.92rem;
-  }
-  .toc-title {
-    font-size: 0.75rem;
-    font-weight: 600;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: var(--text-muted);
-    margin: 0 0 0.6rem;
-  }
-  .toc ol { margin: 0; padding-left: 1.2rem; columns: 2; column-gap: 1.5rem; }
-  .toc li { margin: 0.15rem 0; break-inside: avoid; }
-  .toc a { color: var(--text); border-bottom: none; }
-  .toc a:hover { color: var(--link); }
-  @media (max-width: 540px) { .toc ol { columns: 1; } }
-  .all-caps {
-    text-transform: uppercase;
-    font-size: 0.85rem;
-    letter-spacing: 0.02em;
-    line-height: 1.55;
-  }
-  footer {
-    margin-top: 3rem;
-    padding: 1.5rem 1.25rem 2rem;
-    background: var(--bg-soft);
-    border-top: 1px solid var(--border);
-    text-align: center;
-    color: var(--text-muted);
-    font-size: 0.85rem;
-  }
-  footer p { margin: 0.3rem auto; max-width: 600px; }
-  footer a { color: var(--text-muted); border-bottom: 1px dotted var(--text-muted); }
-  footer a:hover { color: var(--link); border-bottom-color: var(--link); }
-  .footer-mark {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-    font-weight: 600;
-    color: var(--brand-primary);
-    margin-bottom: 0.4rem;
-  }
-  ::selection { background: var(--brand-primary); color: #fff; }
+/* Quiet Sky — brand stylesheet for hosted legal/landing pages.
+   Palette + type pulled from the Quiet Sky Design Reset tokens (v1.0). */
+
+:root {
+  /* Brand canvas / surfaces (dark is the canonical mode) */
+  --qs-bg:        #0C1A2A;
+  --qs-surface:   #0A1320;
+  --qs-surface-1: #122036;
+  --qs-surface-2: #182A45;
+  --qs-outline:   #2E4566;
+  --qs-outline-subtle: #1F314B;
+
+  /* Text */
+  --qs-text:   #FFFFFF;
+  --qs-text-2: #C8D4E4;
+  --qs-text-3: #8FA0B8;
+
+  /* Accent */
+  --qs-accent: #4FB6F0;
+  --qs-accent-tint: rgba(79,182,240,0.16);
+
+  /* Sunset brand gradient (matches the app icon) */
+  --qs-sun-1: #FFCB94;
+  --qs-sun-2: #E48C8A;
+  --qs-sun-3: #7A4596;
+  --qs-sun-4: #1F2E68;
+
+  --qs-radius: 16px;
+  --qs-maxw: 820px;
+  --qs-font: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+* { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  font-family: var(--qs-font);
+  color: var(--qs-text-2);
+  background:
+    radial-gradient(120% 90% at 50% -10%, rgba(122,69,150,0.20) 0%, rgba(122,69,150,0) 55%),
+    var(--qs-bg);
+  line-height: 1.62;
+  font-size: 16.5px;
+  letter-spacing: 0;
+  -webkit-font-smoothing: antialiased;
+}
+
+a { color: var(--qs-accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+/* ---------- Header ---------- */
+.qs-header {
+  position: sticky; top: 0; z-index: 20;
+  background: linear-gradient(180deg, rgba(10,19,32,0.92) 0%, rgba(10,19,32,0.78) 100%);
+  backdrop-filter: saturate(150%) blur(10px);
+  border-bottom: 1px solid var(--qs-outline-subtle);
+}
+.qs-header-inner {
+  max-width: var(--qs-maxw); margin: 0 auto;
+  padding: 14px 22px;
+  display: flex; align-items: center; justify-content: space-between; gap: 16px;
+}
+.qs-brand { display: flex; align-items: center; gap: 12px; color: var(--qs-text); }
+.qs-brand:hover { text-decoration: none; }
+.qs-mark { display: inline-flex; box-shadow: 0 6px 18px rgba(0,0,0,0.35); border-radius: 11px; }
+.qs-mark svg { display: block; border-radius: 11px; }
+.qs-wordmark { font-weight: 700; font-size: 19px; letter-spacing: -0.01em; color: var(--qs-text); }
+.qs-nav { display: flex; gap: 6px; }
+.qs-nav a {
+  color: var(--qs-text-3); font-weight: 500; font-size: 14.5px;
+  padding: 7px 13px; border-radius: 999px; transition: background .15s, color .15s;
+}
+.qs-nav a:hover { color: var(--qs-text); text-decoration: none; background: rgba(255,255,255,0.05); }
+.qs-nav a.is-active { color: var(--qs-text); background: var(--qs-accent-tint); }
+
+/* ---------- Main / doc ---------- */
+.qs-main { max-width: var(--qs-maxw); margin: 0 auto; padding: 48px 22px 24px; }
+.qs-doc { }
+
+.qs-eyebrow {
+  text-transform: uppercase; letter-spacing: 0.10em;
+  font-size: 12.5px; font-weight: 600; color: var(--qs-accent);
+  margin: 0 0 10px;
+}
+h1 {
+  color: var(--qs-text); font-weight: 700; letter-spacing: -0.02em;
+  font-size: 40px; line-height: 1.1; margin: 0 0 16px;
+}
+.qs-lede { font-size: 19px; color: var(--qs-text-2); margin: 0 0 26px; max-width: 64ch; }
+
+.qs-meta {
+  display: flex; flex-wrap: wrap; gap: 8px 22px;
+  font-size: 14px; color: var(--qs-text-3); margin: 0 0 8px;
+}
+.qs-meta strong { color: var(--qs-text-2); font-weight: 600; }
+
+hr { border: 0; border-top: 1px solid var(--qs-outline-subtle); margin: 28px 0; }
+
+h2 {
+  color: var(--qs-text); font-weight: 600; letter-spacing: -0.01em;
+  font-size: 23px; line-height: 1.25; margin: 38px 0 12px;
+  scroll-margin-top: 80px;
+}
+p { margin: 0 0 16px; }
+ul { margin: 0 0 16px; padding-left: 22px; }
+li { margin: 0 0 7px; }
+
+code {
+  font-family: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 0.86em; background: var(--qs-surface-1); color: var(--qs-text-2);
+  padding: 2px 6px; border-radius: 6px; border: 1px solid var(--qs-outline-subtle);
+}
+
+/* Callout */
+.qs-callout {
+  background: linear-gradient(180deg, var(--qs-surface-1) 0%, var(--qs-surface) 100%);
+  border: 1px solid var(--qs-outline-subtle);
+  border-left: 3px solid var(--qs-accent);
+  border-radius: var(--qs-radius);
+  padding: 20px 22px; margin: 0 0 30px;
+}
+.qs-callout-title { font-size: 13px !important; text-transform: uppercase; letter-spacing: 0.08em; color: var(--qs-accent) !important; margin: 0 0 8px !important; }
+.qs-callout p { margin: 0; color: var(--qs-text-2); }
+
+/* Tables */
+.qs-table-wrap { overflow-x: auto; margin: 0 0 18px; border-radius: var(--qs-radius); border: 1px solid var(--qs-outline-subtle); }
+table { border-collapse: collapse; width: 100%; font-size: 14.5px; background: var(--qs-surface); }
+thead th {
+  text-align: left; color: var(--qs-text); font-weight: 600;
+  background: var(--qs-surface-2); padding: 11px 14px;
+  border-bottom: 1px solid var(--qs-outline);
+}
+tbody td { padding: 11px 14px; border-bottom: 1px solid var(--qs-outline-subtle); color: var(--qs-text-2); vertical-align: top; }
+tbody tr:last-child td { border-bottom: 0; }
+tbody tr:hover td { background: rgba(255,255,255,0.02); }
+
+/* ---------- Footer ---------- */
+.qs-footer { border-top: 1px solid var(--qs-outline-subtle); margin-top: 40px; }
+.qs-footer-inner {
+  max-width: var(--qs-maxw); margin: 0 auto; padding: 26px 22px 40px;
+  display: flex; flex-wrap: wrap; align-items: center; gap: 6px 16px;
+  font-size: 14px; color: var(--qs-text-3);
+}
+.qs-footer-brand { font-weight: 700; color: var(--qs-text-2); }
+.qs-footer-tag { color: var(--qs-text-3); }
+.qs-footer-nav { margin-left: auto; display: flex; gap: 16px; }
+.qs-footer-nav a { color: var(--qs-text-3); }
+.qs-footer-nav a:hover { color: var(--qs-text); }
+
+/* ---------- Landing extras ---------- */
+.qs-hero {
+  text-align: center; padding: 72px 22px 40px; max-width: var(--qs-maxw); margin: 0 auto;
+}
+.qs-hero .qs-mark-lg { display: inline-flex; margin-bottom: 24px; box-shadow: 0 14px 40px rgba(0,0,0,0.45); border-radius: 26px; }
+.qs-hero h1 { font-size: 48px; }
+.qs-hero .qs-lede { margin-left: auto; margin-right: auto; }
+.qs-cards { max-width: var(--qs-maxw); margin: 0 auto; padding: 0 22px 60px; display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.qs-card {
+  display: block; background: linear-gradient(180deg, var(--qs-surface-1) 0%, var(--qs-surface) 100%);
+  border: 1px solid var(--qs-outline-subtle); border-radius: var(--qs-radius);
+  padding: 22px 24px; color: var(--qs-text-2); transition: border-color .15s, transform .15s;
+}
+.qs-card:hover { text-decoration: none; border-color: var(--qs-outline-strong, #4A6488); transform: translateY(-2px); }
+.qs-card h3 { margin: 0 0 6px; color: var(--qs-text); font-size: 19px; font-weight: 600; }
+.qs-card p { margin: 0; color: var(--qs-text-3); font-size: 14.5px; }
+.qs-card .qs-arrow { color: var(--qs-accent); font-weight: 600; font-size: 14.5px; margin-top: 12px; display: inline-block; }
+
+@media (max-width: 620px) {
+  h1 { font-size: 32px; }
+  .qs-hero h1 { font-size: 36px; }
+  .qs-lede { font-size: 17px; }
+  .qs-cards { grid-template-columns: 1fr; }
+  .qs-main { padding-top: 32px; }
+}
+
 </style>
 </head>
 <body>
-
-<header class="header">
-  <div class="header-inner">
-    <div class="logo-mark" aria-hidden="true">
-      <svg viewBox="0 0 56 56" xmlns="http://www.w3.org/2000/svg">
-        <path d="M28 8 L44 16 V30 C44 39 37 46 28 48 C19 46 12 39 12 30 V16 Z"
-              fill="none" stroke="rgba(255,255,255,0.95)" stroke-width="2.2" stroke-linejoin="round"/>
-        <path d="M16 26 Q22 20 28 24 T40 26" fill="none" stroke="rgba(255,255,255,0.7)" stroke-width="1.8" stroke-linecap="round"/>
-        <path d="M16 32 Q22 26 28 30 T40 32" fill="none" stroke="rgba(255,255,255,0.5)" stroke-width="1.8" stroke-linecap="round"/>
-      </svg>
-    </div>
-    <h1>Quiet Sky — Terms of Use</h1>
-    <p class="tagline">Plain-English terms for a privacy-first weather app.</p>
-    <p class="meta"><strong>Effective:</strong> May 28, 2026 &nbsp;·&nbsp; <strong>App:</strong> <code style="background:rgba(255,255,255,0.15);color:#fff;border:0">com.auroraweather.app</code></p>
+<header class="qs-header">
+  <div class="qs-header-inner">
+    <a class="qs-brand" href="./index.html" aria-label="Quiet Sky home">
+      <span class="qs-mark" aria-hidden="true">
+        <svg viewBox="0 0 512 512" width="40" height="40" role="img" aria-label="Quiet Sky">
+          <defs>
+            <linearGradient id="qsbg" x1="256" y1="0" x2="256" y2="512" gradientUnits="userSpaceOnUse">
+              <stop offset="0" stop-color="#FFCB94"/><stop offset="0.22" stop-color="#E48C8A"/>
+              <stop offset="0.55" stop-color="#7A4596"/><stop offset="0.85" stop-color="#1F2E68"/>
+              <stop offset="1" stop-color="#0A1530"/>
+            </linearGradient>
+            <radialGradient id="qssun" cx="256" cy="300" r="78" gradientUnits="userSpaceOnUse">
+              <stop offset="0" stop-color="#FFF0CC"/><stop offset="0.6" stop-color="#FFD088"/><stop offset="1" stop-color="#E08A4C"/>
+            </radialGradient>
+            <radialGradient id="qsglow" cx="256" cy="300" r="180" gradientUnits="userSpaceOnUse">
+              <stop offset="0" stop-color="#FFCD7E" stop-opacity="0.45"/><stop offset="1" stop-color="#FFCD7E" stop-opacity="0"/>
+            </radialGradient>
+          </defs>
+          <rect width="512" height="512" rx="112" fill="url(#qsbg)"/>
+          <rect x="56" y="298" width="400" height="1.4" fill="#FFFFFF" opacity="0.16"/>
+          <circle cx="256" cy="300" r="180" fill="url(#qsglow)"/>
+          <circle cx="256" cy="300" r="78" fill="url(#qssun)"/>
+          <circle cx="390" cy="120" r="3.4" fill="#FFFFFF" opacity="0.6"/>
+        </svg>
+      </span>
+      <span class="qs-wordmark">Quiet&nbsp;Sky</span>
+    </a>
+    <nav class="qs-nav">
+      <a href="./index.html">Privacy</a>
+      <a href="./terms.html" class="is-active">Terms</a>
+    </nav>
   </div>
 </header>
 
-<main>
-
-<div class="summary">
-  <h3>Summary</h3>
-  <p>You can use Quiet Sky for free or as a paid subscriber. The app shows weather forecasts from third-party providers. <strong>Forecasts are not perfect and are not a safety tool</strong> — don't use them to make life-or-death decisions. We won't collect data we don't need (that's the whole point of the app), and you won't try to break, abuse, or resell the service. If something goes wrong, our maximum responsibility is refunding what you paid us in the last 12 months. Subscriptions are handled by Google Play, so cancellations and refunds go through Google.</p>
-</div>
-
-<nav class="toc" aria-label="Table of contents">
-  <p class="toc-title">Contents</p>
-  <ol>
-    <li><a href="#s1">Who we are and what this covers</a></li>
-    <li><a href="#s2">Your license to use the app</a></li>
-    <li><a href="#s3">Weather data is not a safety tool</a></li>
-    <li><a href="#s4">Acceptable use</a></li>
-    <li><a href="#s5">Accounts &amp; identity</a></li>
-    <li><a href="#s6">Subscriptions &amp; payments</a></li>
-    <li><a href="#s7">Third-party data &amp; providers</a></li>
-    <li><a href="#s8">Intellectual property</a></li>
-    <li><a href="#s9">Termination</a></li>
-    <li><a href="#s10">Warranty disclaimer</a></li>
-    <li><a href="#s11">Limitation of liability</a></li>
-    <li><a href="#s12">Indemnification</a></li>
-    <li><a href="#s13">Changes to these terms</a></li>
-    <li><a href="#s14">Governing law &amp; disputes</a></li>
-    <li><a href="#s15">Contact</a></li>
-  </ol>
-</nav>
-
-<p>These Terms of Use ("Terms") are a contract between you and Aaron Coldiron ("we," "us"), the publisher of the Quiet Sky Android application ("Quiet Sky" or "the app"). By installing, opening, or using Quiet Sky, you agree to these Terms. If you don't agree, don't use the app.</p>
-
-<p>These Terms work alongside our <a href="https://nw-hiker-skier.github.io/quietsky-privacy/">Privacy Policy</a>, which explains what data we do and don't collect. The Privacy Policy is incorporated into these Terms by reference.</p>
-
-<h2 id="s1">1. Who we are and what this covers</h2>
-
-<p>Quiet Sky is published by:</p>
-<ul>
-  <li><strong>Publisher:</strong> Aaron Coldiron</li>
-  <li><strong>Location:</strong> Bellevue, Washington, USA</li>
-  <li><strong>App:</strong> Quiet Sky (Android package <code>com.auroraweather.app</code>)</li>
-</ul>
-
-<p>These Terms cover your use of the Android app, the back-end proxy we operate at <code>aurora-weather-proxy.coldironguard.workers.dev</code>, and any optional paid subscription tier ("Quiet Sky Pro").</p>
-
-<p>You must be at least 13 years old to use Quiet Sky. If you are under the age of majority in your jurisdiction, you must have a parent or guardian's permission.</p>
-
-<h2 id="s2">2. Your license to use the app</h2>
-
-<p>Subject to these Terms, we grant you a personal, limited, non-exclusive, non-transferable, revocable license to install and use Quiet Sky on Android devices you own or control, for your own non-commercial use.</p>
-
-<p>You may not:</p>
-<ul>
-  <li>Copy, modify, distribute, sell, sublicense, or lease the app or any part of it.</li>
-  <li>Reverse-engineer, decompile, or disassemble the app, except where applicable law expressly permits it.</li>
-  <li>Remove or alter any copyright, trademark, or other proprietary notices.</li>
-  <li>Use the app to build a competing product.</li>
-</ul>
-
-<p>You may inspect the publicly distributed APK and write about what's in it (we encourage this — see our Privacy Policy §3 where we invite exactly this).</p>
-
-<h2 id="s3">3. Weather data is not a safety tool</h2>
-
-<div class="warn">
-  <p><strong>Important.</strong> Quiet Sky shows weather forecasts from third-party providers. Forecasts are <strong>predictions</strong>, not guarantees. They can be wrong, delayed, incomplete, or unavailable. The app's severe-weather alerts depend on those same upstream providers and on Android delivering background notifications on time, which it does not always do.</p>
-  <p><strong>Do not rely on Quiet Sky for life-or-death decisions.</strong> Examples of decisions that need an authoritative source instead:</p>
-  <ul style="margin-bottom: 0;">
-    <li>Backcountry travel, mountaineering, aviation, marine navigation, or any activity where being wrong about weather is dangerous.</li>
-    <li>Flood, fire, tornado, hurricane, tsunami, lightning, or any other life-safety event. Use your country's official meteorological service (in the US: <a href="https://www.weather.gov/">weather.gov</a> and <a href="https://alerts.weather.gov/">alerts.weather.gov</a>; in the EU: <a href="https://www.meteoalarm.org/">meteoalarm.org</a>).</li>
-    <li>Medical, agricultural, industrial, insurance, or legal decisions where weather data is evidentiary.</li>
-  </ul>
-</div>
-
-<p>You use Quiet Sky's forecasts and alerts at your own risk. We are not liable for any decision you make based on what the app shows. This is true for every weather app on every platform, and we are not pretending otherwise.</p>
-
-<h2 id="s4">4. Acceptable use</h2>
-
-<p>The proxy we run is shared infrastructure paid for by us and by the upstream providers' licensing agreements. To keep it available for everyone, you agree not to:</p>
-
-<ul>
-  <li>Use the app or proxy to scrape, mirror, redistribute, or resell upstream weather data.</li>
-  <li>Send abusive or excessive request volumes (rate-limit evasion, traffic amplification, denial-of-service attempts).</li>
-  <li>Use the app to violate any law, infringe anyone's rights, or do anything that could expose us or our upstream providers to legal liability.</li>
-  <li>Attempt to discover, intercept, or interfere with other users' requests (there is no user-to-user data flow in Quiet Sky, so this would be hard, but we're saying don't try).</li>
-  <li>Probe or attempt to bypass the proxy's authentication, rate limits, or upstream provider gating.</li>
-</ul>
-
-<p>We may rate-limit, throttle, or refuse service to clients that violate this section, including blocking the device or IP address making abusive requests. We do not log requests to durable storage (see Privacy Policy §2), so enforcement is at the edge in real time, not retroactive.</p>
-
-<h2 id="s5">5. Accounts &amp; identity</h2>
-
-<p>Quiet Sky has no user accounts. There is nothing for you to sign in to, nothing for you to forget the password to, and nothing for us to lose in a breach. Your preferences and saved locations live only on your device. See the Privacy Policy for full detail.</p>
-
-<p>Because there are no accounts, anyone with physical access to your unlocked device can see your saved locations and theme preferences. Protect your device the way you protect every other app on it.</p>
-
-<h2 id="s6">6. Subscriptions &amp; payments</h2>
-
-<p>Quiet Sky's core weather features are free. We may offer a paid subscription tier ("Quiet Sky Pro") for premium features. If we do:</p>
-
-<ul>
-  <li><strong>Payments are handled by Google Play Billing.</strong> We do not see your card number, billing address, or name. Google charges you, takes its cut, and pays us the remainder.</li>
-  <li><strong>Subscription terms (price, billing period, renewal, cancellation, refunds) are governed by your <a href="https://play.google.com/about/play-terms/">Google Play agreement</a></strong> in addition to these Terms. Where the two conflict on payment mechanics, Google Play's terms control for the payment itself.</li>
-  <li><strong>Auto-renewal:</strong> subscriptions renew automatically through Google Play unless you cancel through the Play Store before the renewal date.</li>
-  <li><strong>Refunds</strong> are handled through Google Play (Play Store → account → Order history → Request refund). We can't issue refunds directly because we don't receive your payment directly.</li>
-  <li><strong>Price changes:</strong> we may change subscription prices for new billing periods. Google Play will notify you and require your consent before charging a higher price.</li>
-  <li>If your subscription lapses or you stop paying, premium features turn off; the free features continue to work.</li>
-</ul>
-
-<p>We make no promise that any specific premium feature will exist or continue to exist. If we discontinue a feature you paid for, we will tell you in the app's release notes; if that materially changes what you bought, request a pro-rated refund through Google Play.</p>
-
-<h2 id="s7">7. Third-party data &amp; providers</h2>
-
-<p>Quiet Sky retrieves data from third-party providers, listed in our Privacy Policy. Examples include Open-Meteo, Foreca, Pirate Weather, and IQAir. Each provider has its own terms of service, accuracy claims, data coverage, and uptime. We do not own, control, or guarantee their data.</p>
-
-<p>If a provider rate-limits us, changes its API, raises prices we can't sustain, or shuts down, the corresponding data may briefly or permanently disappear from the app. We will try to swap to a comparable provider when this happens, but we don't guarantee feature continuity.</p>
-
-<p>Map tiles, when shown, are served by MapTiler under their <a href="https://www.maptiler.com/terms/">terms</a>, including attribution requirements that are displayed on every map view.</p>
-
-<h2 id="s8">8. Intellectual property</h2>
-
-<p>The Quiet Sky app code, user interface, brand, icons, weather glyphs, and original written content are owned by us or used under license. Third-party assets (fonts, libraries, weather data, map tiles) belong to their respective owners and are used under their licenses.</p>
-
-<p>"Quiet Sky," the shield-with-aurora logomark, and the visual design system are our trademarks (registration status: common-law as of 2026; pending USPTO clearance). You may not use them to imply our endorsement of anything we haven't endorsed.</p>
-
-<p>Open-source components used by the app are listed in the in-app "Open-source licenses" screen and are governed by their respective open-source licenses, which apply to those components instead of these Terms.</p>
-
-<h2 id="s9">9. Termination</h2>
-
-<p>You can terminate this agreement at any time by uninstalling the app. If you have a paid subscription, cancel it in the Play Store first to stop further charges.</p>
-
-<p>We may suspend or terminate your access to the proxy, the app, or premium features if you breach these Terms, particularly §4 (Acceptable use), or if your use exposes us or our upstream providers to legal or financial risk. We may also discontinue Quiet Sky entirely, with reasonable notice in the app's release notes where practical.</p>
-
-<p>Sections that should reasonably survive termination (warranty disclaimer, limitation of liability, indemnification, intellectual property, governing law) do.</p>
-
-<h2 id="s10">10. Warranty disclaimer</h2>
-
-<p class="all-caps">Quiet Sky is provided "as is" and "as available," with all faults and without warranty of any kind. To the maximum extent permitted by law, we disclaim all warranties, express or implied, including but not limited to warranties of merchantability, fitness for a particular purpose, accuracy, non-infringement, uninterrupted availability, and any warranties arising from course of dealing or trade usage.</p>
-
-<p class="all-caps">We do not warrant that the app will be error-free, that forecasts will be accurate, that severe-weather alerts will arrive on time or at all, that the proxy will be available, or that data will be free from inaccuracies, outages, or third-party-provider failures.</p>
-
-<p>This section applies to the maximum extent allowed by the law where you live. Some jurisdictions don't allow exclusion of certain warranties, so part of this section may not apply to you; the rest still does.</p>
-
-<h2 id="s11">11. Limitation of liability</h2>
-
-<p class="all-caps">To the maximum extent permitted by law, in no event will we be liable to you for any indirect, incidental, special, consequential, exemplary, or punitive damages, including but not limited to lost profits, lost data, business interruption, loss of goodwill, or property damage, arising out of or in connection with your use of Quiet Sky, even if we have been advised of the possibility of such damages.</p>
-
-<p class="all-caps">Our total aggregate liability to you for all claims arising out of or relating to these Terms or your use of Quiet Sky, regardless of the form of action, will not exceed the greater of (a) the total amount you have paid us through Google Play in the twelve (12) months immediately preceding the event giving rise to the claim, or (b) twenty US dollars (US$20).</p>
-
-<p>If you have not paid us anything (because you use the free tier), our maximum liability to you is US$20. We recognize this is small; it is also commensurate with what we charge you (nothing), and it is the trade you make for using software for free.</p>
-
-<p>Some jurisdictions don't allow exclusion or limitation of incidental or consequential damages, so part of this section may not apply to you; the rest still does.</p>
-
-<h2 id="s12">12. Indemnification</h2>
-
-<p>You agree to indemnify, defend, and hold us harmless from any claim, demand, loss, or damages, including reasonable attorneys' fees, arising out of (a) your breach of these Terms, (b) your misuse of the app or proxy, (c) your violation of any law or third-party right, or (d) any decision you made in reliance on weather data shown by the app.</p>
-
-<h2 id="s13">13. Changes to these terms</h2>
-
-<p>We may update these Terms from time to time. The new version replaces this one at the same URL, and the "Effective" date at the top will update. If a change materially affects your rights (price increases, new restrictions on use, anything that changes what you originally agreed to), we will surface the change in the app's release notes for that version. Your continued use of the app after a change means you accept the new Terms; if you don't, uninstall the app and (if applicable) cancel your subscription in Google Play.</p>
-
-<p>Edit history for this page is public on GitHub at <a href="https://github.com/NW-Hiker-Skier/quietsky-privacy">github.com/NW-Hiker-Skier/quietsky-privacy</a>, so you can diff any change yourself.</p>
-
-<h2 id="s14">14. Governing law &amp; disputes</h2>
-
-<p>These Terms are governed by the laws of the State of Washington, USA, without regard to its conflict-of-laws principles. The United Nations Convention on Contracts for the International Sale of Goods does not apply.</p>
-
-<h3>14.1 Informal resolution first</h3>
-<p>Before filing any formal claim, you agree to contact us at the email in §15 and give us thirty (30) days to try to resolve the dispute informally. Most issues are misunderstandings or bugs and can be fixed without a lawyer.</p>
-
-<h3>14.2 Binding arbitration</h3>
-<p class="all-caps">Please read this section carefully. It requires you and us to resolve disputes through binding individual arbitration instead of in court, and it limits the way you can seek relief from us.</p>
-
-<p>If informal resolution doesn't work, you and we agree that any dispute, claim, or controversy arising out of or relating to these Terms, your use of Quiet Sky, or any aspect of the relationship between us — whether based in contract, tort, statute, fraud, misrepresentation, or any other legal theory — will be resolved by <strong>final and binding individual arbitration</strong>, not in court. This includes disputes that arose before you agreed to these Terms.</p>
-
-<p>Arbitration is administered by the American Arbitration Association (AAA) under its Consumer Arbitration Rules (or, if you live outside the US, by a comparable consumer-arbitration body using equivalent consumer-friendly rules). The arbitrator's award is binding and may be entered as a judgment in any court of competent jurisdiction. The seat of arbitration is King County, Washington, but arbitration may be conducted remotely (telephonic, videoconference, or document-only) at your election where AAA rules allow, so you don't have to travel.</p>
-
-<p><strong>Why arbitration:</strong> for a one-developer app like Quiet Sky, arbitration is meaningfully cheaper and faster than litigation for both sides, and that lower cost is part of how a free or near-free app stays viable. We accept the same limits you do.</p>
-
-<h3>14.3 Costs of arbitration</h3>
-<p>For any claim where the amount in controversy is US$10,000 or less, <strong>we will pay all AAA filing, administrative, and arbitrator fees</strong>, regardless of who wins, unless the arbitrator finds your claim was frivolous or brought for an improper purpose. For larger claims, AAA's standard fee allocation applies. Each side pays its own attorneys' fees unless a statute or the arbitrator's award says otherwise.</p>
-
-<h3>14.4 Individual claims only — no class actions</h3>
-<p class="all-caps">You and we each agree to bring claims against the other only in your or our individual capacity, and not as a plaintiff or class member in any purported class, collective, consolidated, mass, or representative proceeding. The arbitrator may not consolidate claims of more than one person and may not preside over any form of representative or class proceeding. If this paragraph is found unenforceable as to any specific claim or remedy, that claim or remedy (and only that claim or remedy) is severed and must proceed in court under §14.6; the rest of this §14 still applies to everything else.</p>
-
-<h3>14.5 Exceptions to arbitration</h3>
-<p>The arbitration requirement does not apply to: (a) claims brought in small-claims court if they qualify and stay there; (b) actions to enforce or protect intellectual-property rights (e.g., injunctive relief to stop infringement of the app, the brand, or trade secrets); or (c) claims that applicable law says cannot be arbitrated. Either side may bring those in court.</p>
-
-<h3>14.6 Court venue for non-arbitrable claims</h3>
-<p>Where a claim falls within §14.5 or is otherwise not arbitrable, it will be resolved exclusively in the state or federal courts located in King County, Washington, and you consent to personal jurisdiction and venue there. If you live somewhere where mandatory local consumer-protection law overrides this choice of forum, your local mandatory protections apply to that extent, but the rest of this section still controls everything else.</p>
-
-<h3>14.7 Your right to opt out of arbitration</h3>
-<p>You can opt out of §14.2 (Binding arbitration) and §14.4 (No class actions) by emailing us at the address in §15 within <strong>thirty (30) days</strong> of first accepting these Terms (or, for existing users, within 30 days of the effective date shown at the top of this page). Your email must include your name, the device or Play Store account associated with the app, and the statement "I opt out of the Quiet Sky arbitration agreement." If you opt out, the rest of these Terms continue to apply, and disputes between us proceed under §14.6 (court venue) instead.</p>
-
-<h3>14.8 Changes to this section</h3>
-<p>If we materially change §14 in the future, we will surface that change under §13 (Changes to these terms), and you will have a fresh 30-day window to opt out of the changed arbitration terms using the same process in §14.7. Changes to §14 do not apply retroactively to disputes already filed.</p>
-
-<h2 id="s15">15. Contact</h2>
-
-<p><strong>Publisher:</strong> Aaron Coldiron — Bellevue, Washington, USA<br>
-<strong>Contact:</strong> [your contact email]</p>
-
-<p>If you have questions about these Terms, found a bug, or believe the app or proxy is being used in a way that violates §4, please email and we will respond.</p>
-
+<main class="qs-main">
+  <div class="qs-doc">
+    <p class="qs-eyebrow">Terms</p>
+    <h1>Terms of Service</h1>
+    <p class="qs-lede">The basic rules for using Quiet Sky, written plainly on purpose. If a Google Play listing or in-app purchase screen gives more specific price or renewal details, those control for that purchase.</p>
+    <div class="qs-meta">
+      <span><strong>Last updated</strong> May 28, 2026</span>
+      <span><strong>Contact</strong> <a href="mailto:quietsky.app@gmail.com">quietsky.app@gmail.com</a></span>
+    </div>
+    <hr/>
+
+    <h2 id="t1">1. What Quiet Sky provides</h2>
+    <p>Quiet Sky is a weather app. It shows forecasts, radar, air quality, alerts, widgets, and related weather context from third-party providers and local device state.</p>
+    <p>Weather is uncertain. Quiet Sky is not an emergency service and should not be your only source for severe weather, evacuation, marine, aviation, backcountry, medical, or life-safety decisions. Use official local alerts and emergency channels when safety matters.</p>
+
+    <h2 id="t2">2. Your subscription</h2>
+    <p>Quiet Sky may offer a paid subscription through Google Play. Subscription details&nbsp;— including price, billing period, trial length, renewal date, and included features&nbsp;— are shown in Google Play and in the app before purchase.</p>
+    <p>If you start a free trial, it gives you access to the paid features described in the purchase flow for the trial period shown there. Unless you cancel before the trial ends, Google Play may automatically convert the trial into a paid subscription and charge the payment method associated with your Google Play account.</p>
+    <p>Subscriptions automatically renew at the beginning of each billing period unless you cancel through Google Play before renewal. Deleting the app does not cancel a subscription.</p>
+
+    <h2 id="t3">3. Cancellation</h2>
+    <p>You can manage or cancel a Quiet Sky subscription through Google Play:</p>
+    <ul>
+      <li>On Android: open Google Play → Payments &amp; subscriptions → Subscriptions.</li>
+      <li>On the web: visit <a href="https://play.google.com/store/account/subscriptions">play.google.com/store/account/subscriptions</a>.</li>
+    </ul>
+    <p>After cancellation, Google Play generally keeps your access active until the end of the period you already paid for, unless Google Play or applicable law says otherwise.</p>
+
+    <h2 id="t4">4. Refunds</h2>
+    <p>Purchases and refunds are handled through Google Play. Refund eligibility depends on Google Play policy, local law, purchase timing, and the facts of the request.</p>
+    <p>To request a refund, use Google Play's refund tools or contact Google Play support. You can also contact Quiet Sky at <a href="mailto:quietsky.app@gmail.com">quietsky.app@gmail.com</a> if something about the app did not work as described.</p>
+    <p>Google Play refund information:</p>
+    <ul>
+      <li><a href="https://support.google.com/googleplay/answer/1196026">support.google.com/googleplay/answer/1196026</a></li>
+      <li><a href="https://support.google.com/googleplay/answer/7018481">support.google.com/googleplay/answer/7018481</a></li>
+    </ul>
+
+    <h2 id="t5">5. Acceptable use</h2>
+    <p>Do not use Quiet Sky to break the law, interfere with the service, reverse-engineer paid or protected features, overload app or proxy infrastructure, or misrepresent Quiet Sky data as official emergency guidance.</p>
+
+    <h2 id="t6">6. Third-party services</h2>
+    <p>Quiet Sky relies on third-party weather, map, radar, geocoding, and air-quality providers. Their data, uptime, availability, and terms can change. Quiet Sky may change providers or route requests differently to keep the app working, protect privacy, or control costs.</p>
+
+    <h2 id="t7">7. Privacy</h2>
+    <p>Quiet Sky's <a href="./index.html">privacy policy</a> explains what the app collects, what it does not collect, and when requests go through the Quiet Sky proxy.</p>
+
+    <h2 id="t8">8. Changes</h2>
+    <p>These terms may be updated from time to time. The updated version will be posted here and linked from the app. Material subscription terms shown by Google Play at purchase remain available through Google Play.</p>
+
+    <h2 id="t9">9. Disclaimer</h2>
+    <p>Quiet Sky is provided as-is. Forecasts, alerts, map layers, radar layers, and derived summaries can be delayed, incomplete, or wrong. To the fullest extent allowed by law, Quiet Sky and its developer are not liable for losses caused by reliance on weather information, unavailable service, provider errors, or device/network problems.</p>
+
+    <h2 id="t10">10. Governing law</h2>
+    <p>These terms are governed by the laws of Washington state, except where consumer-protection law in your location requires otherwise.</p>
+  </div>
 </main>
 
-<footer>
-  <p class="footer-mark">
-    <svg width="20" height="20" viewBox="0 0 56 56" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-      <path d="M28 8 L44 16 V30 C44 39 37 46 28 48 C19 46 12 39 12 30 V16 Z" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linejoin="round"/>
-    </svg>
-    Quiet Sky
-  </p>
-  <p>See also: <a href="https://nw-hiker-skier.github.io/quietsky-privacy/">Privacy Policy</a></p>
-  <p>Hosted on GitHub Pages from <a href="https://github.com/NW-Hiker-Skier/quietsky-privacy">github.com/NW-Hiker-Skier/quietsky-privacy</a>. No analytics. No cookies. Edit history is public.</p>
+<footer class="qs-footer">
+  <div class="qs-footer-inner">
+    <span class="qs-footer-brand">Quiet Sky</span>
+    <span class="qs-footer-tag">A privacy-first weather app.</span>
+    <nav class="qs-footer-nav">
+      <a href="./index.html">Privacy</a>
+      <a href="./terms.html">Terms</a>
+      <a href="mailto:quietsky.app@gmail.com">Contact</a>
+    </nav>
+  </div>
 </footer>
-
 </body>
 </html>
