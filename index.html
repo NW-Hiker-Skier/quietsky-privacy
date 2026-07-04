@@ -1,366 +1,41 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Privacy Policy — Quiet Sky</title>
-<meta name="description" content="Quiet Sky privacy policy. No accounts, no analytics SDKs, no trackers, and no server-side records tied to you. We do not sell or share your personal information." />
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
-<style>
-/* Quiet Sky — brand stylesheet for hosted legal/landing pages.
-   Palette + type pulled from the Quiet Sky Design Reset tokens (v1.0). */
-
-:root {
-  /* Brand canvas / surfaces (dark is the canonical mode) */
-  --qs-bg:        #0C1A2A;
-  --qs-surface:   #0A1320;
-  --qs-surface-1: #122036;
-  --qs-surface-2: #182A45;
-  --qs-outline:   #2E4566;
-  --qs-outline-subtle: #1F314B;
-
-  /* Text */
-  --qs-text:   #FFFFFF;
-  --qs-text-2: #C8D4E4;
-  --qs-text-3: #8FA0B8;
-
-  /* Accent */
-  --qs-accent: #4FB6F0;
-  --qs-accent-tint: rgba(79,182,240,0.16);
-
-  /* Sunset brand gradient (matches the app icon) */
-  --qs-sun-1: #FFCB94;
-  --qs-sun-2: #E48C8A;
-  --qs-sun-3: #7A4596;
-  --qs-sun-4: #1F2E68;
-
-  --qs-radius: 16px;
-  --qs-maxw: 820px;
-  --qs-font: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-}
-
-* { box-sizing: border-box; }
-
-html { -webkit-text-size-adjust: 100%; }
-
-body {
-  margin: 0;
-  font-family: var(--qs-font);
-  color: var(--qs-text-2);
-  background:
-    radial-gradient(120% 90% at 50% -10%, rgba(122,69,150,0.20) 0%, rgba(122,69,150,0) 55%),
-    var(--qs-bg);
-  line-height: 1.62;
-  font-size: 16.5px;
-  letter-spacing: 0;
-  -webkit-font-smoothing: antialiased;
-}
-
-a { color: var(--qs-accent); text-decoration: none; }
-a:hover { text-decoration: underline; }
-
-/* ---------- Header ---------- */
-.qs-header {
-  position: sticky; top: 0; z-index: 20;
-  background: linear-gradient(180deg, rgba(10,19,32,0.92) 0%, rgba(10,19,32,0.78) 100%);
-  backdrop-filter: saturate(150%) blur(10px);
-  border-bottom: 1px solid var(--qs-outline-subtle);
-}
-.qs-header-inner {
-  max-width: var(--qs-maxw); margin: 0 auto;
-  padding: 14px 22px;
-  display: flex; align-items: center; justify-content: space-between; gap: 16px;
-}
-.qs-brand { display: flex; align-items: center; gap: 12px; color: var(--qs-text); }
-.qs-brand:hover { text-decoration: none; }
-.qs-mark { display: inline-flex; box-shadow: 0 6px 18px rgba(0,0,0,0.35); border-radius: 11px; }
-.qs-mark svg { display: block; border-radius: 11px; }
-.qs-wordmark { font-weight: 700; font-size: 19px; letter-spacing: -0.01em; color: var(--qs-text); }
-.qs-nav { display: flex; gap: 6px; }
-.qs-nav a {
-  color: var(--qs-text-3); font-weight: 500; font-size: 14.5px;
-  padding: 7px 13px; border-radius: 999px; transition: background .15s, color .15s;
-}
-.qs-nav a:hover { color: var(--qs-text); text-decoration: none; background: rgba(255,255,255,0.05); }
-.qs-nav a.is-active { color: var(--qs-text); background: var(--qs-accent-tint); }
-
-/* ---------- Main / doc ---------- */
-.qs-main { max-width: var(--qs-maxw); margin: 0 auto; padding: 48px 22px 24px; }
-.qs-doc { }
-
-.qs-eyebrow {
-  text-transform: uppercase; letter-spacing: 0.10em;
-  font-size: 12.5px; font-weight: 600; color: var(--qs-accent);
-  margin: 0 0 10px;
-}
-h1 {
-  color: var(--qs-text); font-weight: 700; letter-spacing: -0.02em;
-  font-size: 40px; line-height: 1.1; margin: 0 0 16px;
-}
-.qs-lede { font-size: 19px; color: var(--qs-text-2); margin: 0 0 26px; max-width: 64ch; }
-
-.qs-meta {
-  display: flex; flex-wrap: wrap; gap: 8px 22px;
-  font-size: 14px; color: var(--qs-text-3); margin: 0 0 8px;
-}
-.qs-meta strong { color: var(--qs-text-2); font-weight: 600; }
-
-hr { border: 0; border-top: 1px solid var(--qs-outline-subtle); margin: 28px 0; }
-
-h2 {
-  color: var(--qs-text); font-weight: 600; letter-spacing: -0.01em;
-  font-size: 23px; line-height: 1.25; margin: 38px 0 12px;
-  scroll-margin-top: 80px;
-}
-p { margin: 0 0 16px; }
-ul { margin: 0 0 16px; padding-left: 22px; }
-li { margin: 0 0 7px; }
-
-code {
-  font-family: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
-  font-size: 0.86em; background: var(--qs-surface-1); color: var(--qs-text-2);
-  padding: 2px 6px; border-radius: 6px; border: 1px solid var(--qs-outline-subtle);
-}
-
-/* Callout */
-.qs-callout {
-  background: linear-gradient(180deg, var(--qs-surface-1) 0%, var(--qs-surface) 100%);
-  border: 1px solid var(--qs-outline-subtle);
-  border-left: 3px solid var(--qs-accent);
-  border-radius: var(--qs-radius);
-  padding: 20px 22px; margin: 0 0 30px;
-}
-.qs-callout-title { font-size: 13px !important; text-transform: uppercase; letter-spacing: 0.08em; color: var(--qs-accent) !important; margin: 0 0 8px !important; }
-.qs-callout p { margin: 0; color: var(--qs-text-2); }
-
-/* Tables */
-.qs-table-wrap { overflow-x: auto; margin: 0 0 18px; border-radius: var(--qs-radius); border: 1px solid var(--qs-outline-subtle); }
-table { border-collapse: collapse; width: 100%; font-size: 14.5px; background: var(--qs-surface); }
-thead th {
-  text-align: left; color: var(--qs-text); font-weight: 600;
-  background: var(--qs-surface-2); padding: 11px 14px;
-  border-bottom: 1px solid var(--qs-outline);
-}
-tbody td { padding: 11px 14px; border-bottom: 1px solid var(--qs-outline-subtle); color: var(--qs-text-2); vertical-align: top; }
-tbody tr:last-child td { border-bottom: 0; }
-tbody tr:hover td { background: rgba(255,255,255,0.02); }
-
-/* ---------- Footer ---------- */
-.qs-footer { border-top: 1px solid var(--qs-outline-subtle); margin-top: 40px; }
-.qs-footer-inner {
-  max-width: var(--qs-maxw); margin: 0 auto; padding: 26px 22px 40px;
-  display: flex; flex-wrap: wrap; align-items: center; gap: 6px 16px;
-  font-size: 14px; color: var(--qs-text-3);
-}
-.qs-footer-brand { font-weight: 700; color: var(--qs-text-2); }
-.qs-footer-tag { color: var(--qs-text-3); }
-.qs-footer-nav { margin-left: auto; display: flex; gap: 16px; }
-.qs-footer-nav a { color: var(--qs-text-3); }
-.qs-footer-nav a:hover { color: var(--qs-text); }
-
-/* ---------- Landing extras ---------- */
-.qs-hero {
-  text-align: center; padding: 72px 22px 40px; max-width: var(--qs-maxw); margin: 0 auto;
-}
-.qs-hero .qs-mark-lg { display: inline-flex; margin-bottom: 24px; box-shadow: 0 14px 40px rgba(0,0,0,0.45); border-radius: 26px; }
-.qs-hero h1 { font-size: 48px; }
-.qs-hero .qs-lede { margin-left: auto; margin-right: auto; }
-.qs-cards { max-width: var(--qs-maxw); margin: 0 auto; padding: 0 22px 60px; display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
-.qs-card {
-  display: block; background: linear-gradient(180deg, var(--qs-surface-1) 0%, var(--qs-surface) 100%);
-  border: 1px solid var(--qs-outline-subtle); border-radius: var(--qs-radius);
-  padding: 22px 24px; color: var(--qs-text-2); transition: border-color .15s, transform .15s;
-}
-.qs-card:hover { text-decoration: none; border-color: var(--qs-outline-strong, #4A6488); transform: translateY(-2px); }
-.qs-card h3 { margin: 0 0 6px; color: var(--qs-text); font-size: 19px; font-weight: 600; }
-.qs-card p { margin: 0; color: var(--qs-text-3); font-size: 14.5px; }
-.qs-card .qs-arrow { color: var(--qs-accent); font-weight: 600; font-size: 14.5px; margin-top: 12px; display: inline-block; }
-
-@media (max-width: 620px) {
-  h1 { font-size: 32px; }
-  .qs-hero h1 { font-size: 36px; }
-  .qs-lede { font-size: 17px; }
-  .qs-cards { grid-template-columns: 1fr; }
-  .qs-main { padding-top: 32px; }
-}
-
-</style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Quiet Sky Privacy Policy</title>
+  <link rel="canonical" href="https://getquietsky.app/Privacy">
+  <meta name="robots" content="noindex, follow">
+  <meta http-equiv="refresh" content="0; url=https://getquietsky.app/Privacy">
+  <style>
+    :root { color-scheme: dark; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: grid;
+      place-items: center;
+      font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background: #0C1A2A;
+      color: #C8D4E4;
+      line-height: 1.55;
+    }
+    main {
+      max-width: 620px;
+      padding: 32px;
+      text-align: center;
+    }
+    h1 { color: #fff; font-size: 1.6rem; margin: 0 0 12px; }
+    a { color: #4FB6F0; }
+  </style>
+  <script>
+    window.location.replace("https://getquietsky.app/Privacy");
+  </script>
 </head>
 <body>
-<header class="qs-header">
-  <div class="qs-header-inner">
-    <a class="qs-brand" href="./index.html" aria-label="Quiet Sky home">
-      <span class="qs-mark" aria-hidden="true">
-        <svg viewBox="0 0 512 512" width="40" height="40" role="img" aria-label="Quiet Sky">
-          <defs>
-            <linearGradient id="qsbg" x1="256" y1="0" x2="256" y2="512" gradientUnits="userSpaceOnUse">
-              <stop offset="0" stop-color="#FFCB94"/><stop offset="0.22" stop-color="#E48C8A"/>
-              <stop offset="0.55" stop-color="#7A4596"/><stop offset="0.85" stop-color="#1F2E68"/>
-              <stop offset="1" stop-color="#0A1530"/>
-            </linearGradient>
-            <radialGradient id="qssun" cx="256" cy="300" r="78" gradientUnits="userSpaceOnUse">
-              <stop offset="0" stop-color="#FFF0CC"/><stop offset="0.6" stop-color="#FFD088"/><stop offset="1" stop-color="#E08A4C"/>
-            </radialGradient>
-            <radialGradient id="qsglow" cx="256" cy="300" r="180" gradientUnits="userSpaceOnUse">
-              <stop offset="0" stop-color="#FFCD7E" stop-opacity="0.45"/><stop offset="1" stop-color="#FFCD7E" stop-opacity="0"/>
-            </radialGradient>
-          </defs>
-          <rect width="512" height="512" rx="112" fill="url(#qsbg)"/>
-          <rect x="56" y="298" width="400" height="1.4" fill="#FFFFFF" opacity="0.16"/>
-          <circle cx="256" cy="300" r="180" fill="url(#qsglow)"/>
-          <circle cx="256" cy="300" r="78" fill="url(#qssun)"/>
-          <circle cx="390" cy="120" r="3.4" fill="#FFFFFF" opacity="0.6"/>
-        </svg>
-      </span>
-      <span class="qs-wordmark">Quiet&nbsp;Sky</span>
-    </a>
-    <nav class="qs-nav">
-      <a href="./index.html" class="is-active">Privacy</a>
-      <a href="./terms.html">Terms</a>
-    </nav>
-  </div>
-</header>
-
-<main class="qs-main">
-  <div class="qs-doc">
-    <p class="qs-eyebrow">Privacy</p>
-    <h1>Privacy Policy</h1>
-    <p class="qs-lede">No accounts. No analytics SDKs. No trackers. No server that stores anything about you. This policy is long because the alternative is vague&nbsp;— and vague privacy policies are how apps lie.</p>
-    <div class="qs-meta">
-      <span><strong>Effective</strong> June 2, 2026</span>
-      <span><strong>App</strong> Quiet Sky (<code>com.quietsky.app</code>)</span>
-      <span><strong>Publisher</strong> Quiet Sky LLC, Spokane, WA, USA</span>
-      <span><strong>Contact</strong> <a href="mailto:quiet.sky.weather@gmail.com">quiet.sky.weather@gmail.com</a></span>
-    </div>
-    <hr/>
-
-    <div class="qs-callout">
-      <h2 class="qs-callout-title">The one-paragraph version</h2>
-      <p>Quiet Sky has no user accounts, no analytics SDKs, no crash-reporting SDKs, no advertising IDs, no third-party trackers, and no server-side database of records tied to you. The app talks to weather, air-quality, sunset-quality, build-status, and geocoding APIs through a proxy we operate on Cloudflare Workers. The proxy forwards the minimum route data needed for each request and does not log requests to durable storage. Quiet Sky uses precise location when you allow it, because accurate forecasts and nowcasts need it. The weather providers receive the coordinates needed to compute your forecast, but never anything that identifies you. The proxy strips your IP, device, and identity before the request reaches any provider (see Section&nbsp;2). Upstream APIs receive the Worker's IP, not yours. Your saved locations live only on your device. You can lower forecast location precision in Settings. We have no account system and no way to identify you, and <strong>we do not sell or share your personal information</strong>. The base map is served first-party from our own Cloudflare storage, and radar imagery is routed through the proxy as well, so map and radar traffic does not expose your IP or identity to a third-party map provider (see Section&nbsp;3).</p>
-    </div>
-
-    <h2 id="s1">1. What data the app collects on your device</h2>
-    <div class="qs-table-wrap">
-    <table>
-      <thead><tr><th>Data</th><th>Source</th><th>Stored where</th><th>Sent anywhere?</th></tr></thead>
-      <tbody>
-        <tr><td>Current location</td><td>Android location permission, if you allow it</td><td>On your device as "Current location"</td><td>Coordinates sent to weather APIs through the proxy at your selected precision (§3).</td></tr>
-        <tr><td>Locations you add</td><td>You type them or pick from search</td><td>On your device, app-private storage</td><td>Coordinates sent to weather APIs (§3). City names are not sent.</td></tr>
-        <tr><td>Provider preference</td><td>Your selection in Settings</td><td>On your device</td><td>No</td></tr>
-        <tr><td>Theme preference</td><td>Your selection in Settings</td><td>On your device</td><td>No</td></tr>
-        <tr><td>Forecast cache</td><td>Returned by the API for a location you asked about</td><td>On your device</td><td>No</td></tr>
-      </tbody>
-    </table>
-    </div>
-    <p><strong>No personal information is collected.</strong> Quiet Sky does not ask for your name, email, phone number, or date of birth. There are no accounts, no sign-in, and no way to "log in."</p>
-    <p>Quiet Sky requests Android location permission <em>only</em> when you ask for local weather. On Android 12+ you can choose Precise or Approximate in the system prompt. Quiet Sky defaults forecast requests to full precision for nowcast accuracy, and lets you lower precision to Neighborhood or Coarse in Settings. It does not run background location tracking.</p>
-
-    <h2 id="s2">2. What data we collect on our server</h2>
-    <p>We operate a Cloudflare Worker at <code>aurora-weather-proxy.coldironguard.workers.dev</code> that the app uses as a proxy between your device and upstream weather APIs. The proxy exists for three concrete reasons: (a) so we can swap providers without shipping a new APK, (b) so upstream API keys are not embedded in the client, and (c) so upstream APIs see Cloudflare's IP and not yours.</p>
-    <p><strong>The proxy does not log requests to durable storage.</strong> Cloudflare's edge nodes write short-lived operational logs (retained ~7 days for the platform's own ops/abuse purposes). We do not enable Logpush, write to a database, or keep an analytics view. We cannot retrieve what your device asked for an hour ago, much less a day ago.</p>
-    <p><strong>The proxy does not associate requests with users</strong>, because there is no user identity to associate them with. No per-device API key, no token, no cookie, no fingerprint.</p>
-    <p>What the proxy briefly handles while processing a request:</p>
-    <ul>
-      <li>The latitude/longitude you asked about for weather, AQI, and sunset-quality routes.</li>
-      <li>The search text you typed for the location-search route.</li>
-      <li>The type of data requested (forecast, hourly, AQI anchor, sunset quality, build status, place lookup).</li>
-      <li>The HTTP headers your device sends. The proxy does not forward your device's User-Agent to providers; upstream requests carry only a generic proxy header and the provider API key.</li>
-      <li>Your IP address, because Cloudflare's edge needs it to route the response. The Worker code does not read, log, or persist it.</li>
-    </ul>
-    <p>What the proxy does <em>not</em> see, ever:</p>
-    <ul>
-      <li>The names of locations you've saved on your device.</li>
-      <li>Your other locations (each request is for one lat/lon at a time).</li>
-      <li>Any identifier that could be tied to your device or account across requests.</li>
-    </ul>
-
-    <h2 id="s3">3. Third-party services and what they see</h2>
-    <p>Quiet Sky uses these upstream APIs. Weather, air-quality, sunset-quality, build-status, and location-search requests go through our Cloudflare Worker proxy, so those upstream APIs receive our Worker's Cloudflare IP, not yours. The base map is served first-party from our own Cloudflare R2 storage, so no third-party map provider receives your requests, and radar tile imagery is routed through the proxy. The map and radar providers and the proxied radar-tile path are listed below.</p>
-    <div class="qs-table-wrap">
-    <table>
-      <thead><tr><th>Upstream</th><th>What they receive per request</th><th>Privacy policy</th></tr></thead>
-      <tbody>
-        <tr><td>Open-Meteo</td><td>Lat, lon, request parameters, via the Quiet Sky proxy</td><td><a href="https://open-meteo.com/en/terms">terms</a></td></tr>
-        <tr><td>Open-Meteo Air Quality</td><td>Lat, lon, AQI parameters, via the proxy</td><td><a href="https://open-meteo.com/en/terms">terms</a></td></tr>
-        <tr><td>Open-Meteo Geocoding</td><td>The text you type into search, via the proxy</td><td><a href="https://open-meteo.com/en/terms">terms</a></td></tr>
-        <tr><td>Foreca</td><td>Lat, lon, request parameters, via the proxy</td><td><a href="https://corporate.foreca.com/en/privacy">privacy</a></td></tr>
-        <tr><td>Pirate Weather</td><td>Lat, lon, request parameters, via the proxy</td><td><a href="https://pirateweather.net/en/latest/">docs</a></td></tr>
-        <tr><td>IQAir AirVisual</td><td>Lat, lon, via the proxy</td><td><a href="https://www.iqair.com/us/privacy-policy">privacy</a></td></tr>
-        <tr><td>SunsetHue</td><td>A broad location bucket (~55&nbsp;km) and local date, via the proxy. The proxy coarsens coordinates for this route before sending; it never receives your IP, device, or identity.</td><td><a href="https://sunsethue.com/privacy">privacy</a></td></tr>
-        <tr><td>RainViewer</td><td>Radar frame metadata and radar tile imagery are routed through the proxy by default in all builds. A developer-only build flag can opt out to the direct provider for debugging; release builds are always proxied.</td><td><a href="https://www.rainviewer.com/br/privacy.html">privacy</a></td></tr>
-        <tr><td>Protomaps (self-hosted)</td><td>Production base map. Vector tiles are built from OpenStreetMap data and served from Quiet Sky's own Cloudflare R2 storage as a first party; no third-party basemap provider receives your requests.</td><td>First-party — covered by this policy</td></tr>
-        <tr><td>OpenStreetMap contributors</td><td>Source map data for the base-map tiles. Map data &copy; OpenStreetMap contributors, used under the Open Database License. No requests are sent to OpenStreetMap from your device.</td><td><a href="https://www.openstreetmap.org/copyright">copyright / license</a></td></tr>
-      </tbody>
-    </table>
-    </div>
-    <p><strong>Quiet Sky does not embed Firebase, Google Analytics, Crashlytics, Mixpanel, Amplitude, Sentry, Bugsnag, Adjust, AppsFlyer, the Facebook SDK, ironSource, Mintegral, Pangle, Unity Ads, AdMob, or any other analytics, attribution, or advertising SDK.</strong> Inspect the APK if you like&nbsp;— <code>classes.dex</code> will not contain any of those packages.</p>
-
-    <h2 id="s4">4. Permissions the app requests</h2>
-    <div class="qs-table-wrap">
-    <table>
-      <thead><tr><th>Permission</th><th>Used for</th><th>Required?</th></tr></thead>
-      <tbody>
-        <tr><td><code>ACCESS_FINE_LOCATION</code></td><td>Precise current-location forecasts and nowcast accuracy. Coordinates go only to weather providers through our proxy, which strips your IP, device, and identity first.</td><td>Optional&nbsp;— choose Approximate at the Android prompt, or search for a place instead.</td></tr>
-        <tr><td><code>ACCESS_COARSE_LOCATION</code></td><td>Filling the first forecast from your approximate current location.</td><td>Optional&nbsp;— deny it and search for a place instead.</td></tr>
-        <tr><td><code>POST_NOTIFICATIONS</code></td><td>Severe-weather alerts and daily summaries. Both off by default.</td><td>Optional&nbsp;— deny it and the app still works.</td></tr>
-        <tr><td><code>ACCESS_NETWORK_STATE</code></td><td>Checking whether you're online before making a request.</td><td>Yes&nbsp;— used to avoid failed requests when offline.</td></tr>
-        <tr><td><code>INTERNET</code></td><td>Talking to the weather proxy and, for map/radar, the selected provider.</td><td>Yes&nbsp;— denying it means no weather or map data.</td></tr>
-        <tr><td><code>RECEIVE_BOOT_COMPLETED</code></td><td>Rescheduling background refresh after reboot.</td><td>Yes. No network activity at boot itself.</td></tr>
-      </tbody>
-    </table>
-    </div>
-    <p>Quiet Sky does <strong>not</strong> request contacts, calendar, microphone, camera, SMS, phone, storage outside its own private directory, Bluetooth, NFC, USB, or any "special" permissions like <code>SYSTEM_ALERT_WINDOW</code> or accessibility services. It requests precise location (<code>ACCESS_FINE_LOCATION</code>) only for forecast accuracy, and the proxy strips your IP, device, and identity before any request reaches a provider.</p>
-
-    <h2 id="s5">5. The Play Billing case</h2>
-    <p>If you subscribe to Quiet Sky Pro (when subscriptions launch), the transaction is handled entirely by the Google Play Billing Library. We do not see your payment method. Google tells us "this purchase token belongs to an active subscription"; we cache that locally on your device. We do not get your name, email, billing address, or last four digits.</p>
-    <p>We do not currently operate a backend that records subscription state, so validation is done client-side against Google Play. If you uninstall and reinstall, the Play Billing Library restores your entitlement from Google's record.</p>
-
-    <h2 id="s6">6. Children</h2>
-    <p>Quiet Sky is not directed at children under 13. We do not knowingly collect data from anyone&nbsp;— including children&nbsp;— because we don't have a backend that collects data.</p>
-
-    <h2 id="s7">7. Data retention</h2>
-    <ul>
-      <li><strong>Server side:</strong> Nothing is stored, so retention is "the request duration." Cloudflare's edge logs follow Cloudflare's policy (currently ~7 days).</li>
-      <li><strong>Device side:</strong> Your saved locations, preferences, and last-known forecast cache stay on your device until you clear app data or uninstall.</li>
-    </ul>
-
-    <h2 id="s8">8. Your rights under GDPR / CCPA</h2>
-    <p><strong>Data controller.</strong> Quiet Sky is operated by Quiet Sky LLC (Spokane, WA, USA), reachable at <a href="mailto:quiet.sky.weather@gmail.com">quiet.sky.weather@gmail.com</a>. Because the app keeps no server-side records tied to you, there is no centralized profile to administer.</p>
-    <p>The "right to know what we have on you" and "right to delete" both resolve trivially: we don't have anything on you to know about or to delete. There is no server-side record tied to you.</p>
-    <p><strong>No sale or sharing of personal information.</strong> We do not sell your personal information, and we do not "share" it for cross-context behavioral advertising, as those terms are defined under the California Consumer Privacy Act (CCPA/CPRA). We have never done so and have no mechanism to. Because we do not sell or share personal information, no "Do Not Sell or Share My Personal Information" action is needed.</p>
-    <p>To clear what's on your device: Settings → Apps → Quiet Sky → Storage → Clear data. To be sure the proxy never sees you again: stop using the app. There is no account to close.</p>
-
-    <h2 id="s9">9. Security</h2>
-    <p>Network traffic is HTTPS only. The app trusts the standard system certificate store. Local storage uses Android's standard app-sandbox protection; we don't currently encrypt the local DataStore with a user-derived key (it's protected by Android's userdata-partition encryption, the platform default).</p>
-
-    <h2 id="s10">10. Changes to this policy</h2>
-    <p>If we change this policy, the new version replaces this one at the same URL and the effective date updates. If a change materially expands what data flows where, we'll note it in the app's "What's new" release notes for that version.</p>
-
-    <h2 id="s11">11. Things we'd rather be honest about than hide</h2>
-    <ul>
-      <li><strong>No Tor mode.</strong> Your ISP can see that you're talking to <code>coldironguard.workers.dev</code>, just not what's in the request.</li>
-      <li><strong>We don't claim to be GDPR/CCPA "compliant" as a marketing checkmark.</strong> We designed around not collecting data, which is the only honest way to make those frameworks easy.</li>
-      <li><strong>Cloudflare is a US company</strong> subject to US legal process. We would have nothing to hand over because the Worker writes none. Cloudflare's 7-day edge logs are subject to Cloudflare's own legal-process handling, not ours.</li>
-      <li><strong>The proxy proxies.</strong> It is not a VPN, Tor, or a mixnet&nbsp;— it's an HTTPS forwarder that terminates your IP at Cloudflare rather than at the upstream API.</li>
-    </ul>
-
-    <h2 id="s12">12. Contact</h2>
-    <p>Quiet Sky LLC&nbsp;— <a href="mailto:quiet.sky.weather@gmail.com">quiet.sky.weather@gmail.com</a>. If you find a bug, a security issue, or something this policy says that turns out not to be accurate, please email and I'll respond.</p>
-  </div>
-</main>
-
-<footer class="qs-footer">
-  <div class="qs-footer-inner">
-    <span class="qs-footer-brand">Quiet Sky</span>
-    <span class="qs-footer-tag">A privacy-first weather app.</span>
-    <nav class="qs-footer-nav">
-      <a href="./index.html">Privacy</a>
-      <a href="./terms.html">Terms</a>
-      <a href="mailto:quiet.sky.weather@gmail.com">Contact</a>
-    </nav>
-  </div>
-</footer>
+  <main>
+    <h1>Quiet Sky Privacy Policy moved</h1>
+    <p>The official Quiet Sky Privacy Policy is maintained at:</p>
+    <p><a href="https://getquietsky.app/Privacy">https://getquietsky.app/Privacy</a></p>
+  </main>
 </body>
 </html>
